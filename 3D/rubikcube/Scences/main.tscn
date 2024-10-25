@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://dngaic61rd08x"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_r0b4k"]
+[ext_resource type="Script" path="res://Scripts/rubik_cube.gd" id="2_ma5rv"]
+[ext_resource type="AudioStream" uid="uid://nu7n23d8w8fe" path="res://Resources/RotationSoundEffect.MP3" id="3_4t7ek"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hm6fb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_nnpgt"]
+sky_material = SubResource("ProceduralSkyMaterial_hm6fb")
+
+[sub_resource type="Environment" id="Environment_ho5om"]
+background_mode = 2
+sky = SubResource("Sky_nnpgt")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6edo7"]
+size = Vector3(2.9, 2.9, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yv1bs"]
+size = Vector3(2.9, 2.9, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ab87"]
+size = Vector3(0.05, 2.9, 2.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvs1e"]
+size = Vector3(0.05, 2.9, 2.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjcm7"]
+size = Vector3(2.9, 0.05, 2.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjyic"]
+size = Vector3(2.9, 0.05, 2.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c60wc"]
+albedo_color = Color(0.596078, 0.458824, 0.815686, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_66oeu"]
+material = SubResource("StandardMaterial3D_c60wc")
+size = Vector3(100, 55, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_r0b4k")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ho5om")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+script = ExtResource("2_ma5rv")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Front" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.44)
+shape = SubResource("BoxShape3D_6edo7")
+
+[node name="Back" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.44)
+shape = SubResource("BoxShape3D_yv1bs")
+
+[node name="Left" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44, 0, 0)
+shape = SubResource("BoxShape3D_0ab87")
+
+[node name="Right" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 0, 0)
+shape = SubResource("BoxShape3D_vvs1e")
+
+[node name="Top" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44, 0)
+shape = SubResource("BoxShape3D_cjcm7")
+
+[node name="Bottom" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.44, 0)
+shape = SubResource("BoxShape3D_fjyic")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4t7ek")
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+visible = false
+mesh = SubResource("BoxMesh_66oeu")

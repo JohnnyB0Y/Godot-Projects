@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjyk60lndha2w"]
+
+[ext_resource type="Script" path="res://Scripts/cube.gd" id="1_xs1ym"]
+[ext_resource type="Shader" path="res://Shaders/cube.gdshader" id="2_85jm6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgv4y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_85jm6")
+shader_parameter/front_color = Color(1, 1, 0, 1)
+shader_parameter/back_color = Color(1, 1, 1, 1)
+shader_parameter/left_color = Color(1, 0, 0, 1)
+shader_parameter/right_color = Color(1, 0.2, 0, 1)
+shader_parameter/top_color = Color(0, 0.3, 1, 1)
+shader_parameter/bottom_color = Color(0, 1, 0, 1)
+shader_parameter/body_color = Color(0, 0, 0, 1)
+shader_parameter/face_light = true
+shader_parameter/border_light = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_syx8g"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_vgv4y")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3urg"]
+
+[node name="Cube" type="Node3D"]
+script = ExtResource("1_xs1ym")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_syx8g")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_p3urg")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
