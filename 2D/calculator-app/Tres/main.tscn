@@ -1,0 +1,266 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgiflgyj8p2iv"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_0pueh"]
+[ext_resource type="StyleBox" uid="uid://bkwm7djhsb83r" path="res://Tres/gray_normal.tres" id="1_kt661"]
+[ext_resource type="StyleBox" uid="uid://3hsac4bbyje5" path="res://Tres/gray_pressed.tres" id="2_cfby1"]
+[ext_resource type="StyleBox" uid="uid://ca35dgiyet8br" path="res://Tres/orange_normal.tres" id="2_fmfht"]
+[ext_resource type="StyleBox" uid="uid://bbsbs4gk61mx3" path="res://Tres/orange_pressed.tres" id="3_crwfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umrmr"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.6, 0.6, 0.6, 0.12549)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6wow"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i517o"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0pueh")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(540, 840)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_umrmr")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Buttons" type="GridContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -657.0
+offset_right = 236.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 13
+theme_override_constants/v_separation = 13
+columns = 4
+
+[node name="plus" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("2_fmfht")
+theme_override_styles/pressed = ExtResource("3_crwfi")
+theme_override_styles/normal = ExtResource("2_fmfht")
+text = "+"
+
+[node name="7" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "7"
+
+[node name="8" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "8"
+
+[node name="9" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "9"
+
+[node name="minus" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("2_fmfht")
+theme_override_styles/pressed = ExtResource("3_crwfi")
+theme_override_styles/normal = ExtResource("2_fmfht")
+text = "-"
+
+[node name="4" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "4"
+
+[node name="5" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "5"
+
+[node name="6" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "6"
+
+[node name="multiply" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("2_fmfht")
+theme_override_styles/pressed = ExtResource("3_crwfi")
+theme_override_styles/normal = ExtResource("2_fmfht")
+text = "x"
+
+[node name="1" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "1"
+
+[node name="2" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "2"
+
+[node name="3" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "3"
+
+[node name="divide" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("2_fmfht")
+theme_override_styles/pressed = ExtResource("3_crwfi")
+theme_override_styles/normal = ExtResource("2_fmfht")
+text = "/"
+
+[node name="0" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "0"
+
+[node name="dot" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "."
+
+[node name="equal" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("1_kt661")
+theme_override_styles/pressed = ExtResource("2_cfby1")
+theme_override_styles/normal = ExtResource("1_kt661")
+text = "="
+
+[node name="C" type="Button" parent="Background/Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6wow")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_i517o")
+theme_override_styles/hover = ExtResource("2_fmfht")
+theme_override_styles/pressed = ExtResource("3_crwfi")
+theme_override_styles/normal = ExtResource("2_fmfht")
+text = "c"
+
+[connection signal="pressed" from="Background/Buttons/plus" to="." method="_on_button_pressed" binds= ["+"]]
+[connection signal="pressed" from="Background/Buttons/7" to="." method="_on_button_pressed" binds= ["7"]]
+[connection signal="pressed" from="Background/Buttons/8" to="." method="_on_button_pressed" binds= ["8"]]
+[connection signal="pressed" from="Background/Buttons/9" to="." method="_on_button_pressed" binds= ["9"]]
+[connection signal="pressed" from="Background/Buttons/minus" to="." method="_on_button_pressed" binds= ["-"]]
+[connection signal="pressed" from="Background/Buttons/4" to="." method="_on_button_pressed" binds= ["4"]]
+[connection signal="pressed" from="Background/Buttons/5" to="." method="_on_button_pressed" binds= ["5"]]
+[connection signal="pressed" from="Background/Buttons/6" to="." method="_on_button_pressed" binds= ["6"]]
+[connection signal="pressed" from="Background/Buttons/multiply" to="." method="_on_button_pressed" binds= ["x"]]
+[connection signal="pressed" from="Background/Buttons/1" to="." method="_on_button_pressed" binds= ["1"]]
+[connection signal="pressed" from="Background/Buttons/2" to="." method="_on_button_pressed" binds= ["2"]]
+[connection signal="pressed" from="Background/Buttons/3" to="." method="_on_button_pressed" binds= ["3"]]
+[connection signal="pressed" from="Background/Buttons/divide" to="." method="_on_button_pressed" binds= ["/"]]
+[connection signal="pressed" from="Background/Buttons/0" to="." method="_on_button_pressed" binds= ["0"]]
+[connection signal="pressed" from="Background/Buttons/dot" to="." method="_on_button_pressed" binds= ["."]]
+[connection signal="pressed" from="Background/Buttons/equal" to="." method="_on_button_pressed" binds= ["="]]
+[connection signal="pressed" from="Background/Buttons/C" to="." method="_on_button_pressed" binds= ["c"]]
