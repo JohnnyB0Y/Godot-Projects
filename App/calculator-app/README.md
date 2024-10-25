@@ -1,8 +1,9 @@
 # Calculator App
 
 <p align="left">
- <img src=./Resources/demo.jpg width=50% />
+ <img src=./Resources/demo.JPG width=50% />
 </p>
+
 
 [YouTube Video](https://www.youtube.com/watch?v=tejrcYUOh_g)
 
